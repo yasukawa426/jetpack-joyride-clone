@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6kms4t7y5628"]
+
+[ext_resource type="Texture2D" uid="uid://ba3nbkq7ni6yy" path="res://resources/images/tiles-small.png" id="1_pybca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pybca"]
+size = Vector2(2305, 34)
+
+[node name="Ground" type="Area2D"]
+z_index = 3
+
+[node name="TilesSmall" type="Sprite2D" parent="."]
+position = Vector2(576, 312)
+scale = Vector2(3, 3)
+texture = ExtResource("1_pybca")
+
+[node name="TilesSmall2" type="Sprite2D" parent="."]
+position = Vector2(1728.0001, 312)
+scale = Vector2(3, 3)
+texture = ExtResource("1_pybca")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1151.5, 559)
+shape = SubResource("RectangleShape2D_pybca")
