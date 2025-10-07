@@ -1,8 +1,20 @@
 [20 Games Catalogue.](https://github.com/yasukawa426/20-games-challenge-catalog)
 
-This time, instead of making a direct remake, I decided to make a game heavely inspired by it. I plan to use diferrent assets and different (to some extent) mechanics and obstacles
 
 ## Game 2 - Jetpack Joyride
+
+This time, instead of making a direct remake, I decided to make a game heavely inspired by it. I plan to use diferrent assets and different (to some extent) mechanics and obstacles
+
+### Goals
+- [x] Game world with a endlessly scrolling floor
+- [ ] Player character that falls when no input is held, but hises when the input is held
+- [ ] Endless obstacles that move from right to left (at least 1). Must be recycled or deleted when they leave the screen
+- [ ] Score and highscore that increases with distance. E.g.: 1000m
+### Bonus
+- [ ] Save highscore between sessions
+- [ ] Shoot objects from player when flying
+- [ ] Particle effects when destroing objects(?)
+
 
 WIP
 
