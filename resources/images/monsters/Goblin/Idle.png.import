@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dul2bgyer8vdq"
-path="res://.godot/imported/Death.png-ea98c8d2e869e4c9915f5dea472410ba.ctex"
+uid="uid://41at7l0duw3p"
+path="res://.godot/imported/Idle.png-ff910cb09398774df045a032ae1aad1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/obstacles/monsters/Flying eye/Death.png"
-dest_files=["res://.godot/imported/Death.png-ea98c8d2e869e4c9915f5dea472410ba.ctex"]
+source_file="res://resources/images/monsters/Goblin/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-ff910cb09398774df045a032ae1aad1f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd7rchkke8yjo"
-path="res://.godot/imported/Take Hit.png-d5e843267de7e209408354a4ef73d040.ctex"
+uid="uid://ctju6k642gxdh"
+path="res://.godot/imported/Attack.png-d68b001589a6f6840fc3cf14a5ba5529.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/obstacles/monsters/Goblin/Take Hit.png"
-dest_files=["res://.godot/imported/Take Hit.png-d5e843267de7e209408354a4ef73d040.ctex"]
+source_file="res://resources/images/monsters/Flying eye/Attack.png"
+dest_files=["res://.godot/imported/Attack.png-d68b001589a6f6840fc3cf14a5ba5529.ctex"]
 
 [params]
 

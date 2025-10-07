@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct2ucd3vsb51n"
-path="res://.godot/imported/Take Hit.png-e63c423a9c1b473c2b655d47bd9ce574.ctex"
+uid="uid://dqgslbt5mp0qf"
+path="res://.godot/imported/Death.png-72583b7e27ed0fab183d7505c23c23e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/obstacles/monsters/Flying eye/Take Hit.png"
-dest_files=["res://.godot/imported/Take Hit.png-e63c423a9c1b473c2b655d47bd9ce574.ctex"]
+source_file="res://resources/images/monsters/Goblin/Death.png"
+dest_files=["res://.godot/imported/Death.png-72583b7e27ed0fab183d7505c23c23e9.ctex"]
 
 [params]
 

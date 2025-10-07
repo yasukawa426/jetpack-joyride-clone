@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmhykrgfekog2"
-path="res://.godot/imported/Attack3.png-114e2830c1beb61900e0daf7c4b6c1e1.ctex"
+uid="uid://d22tbnee70gy5"
+path="res://.godot/imported/Attack3.png-b0af866d240234dc1fb83d11241502a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/obstacles/monsters/Goblin/Attack3.png"
-dest_files=["res://.godot/imported/Attack3.png-114e2830c1beb61900e0daf7c4b6c1e1.ctex"]
+source_file="res://resources/images/monsters/Flying eye/Attack3.png"
+dest_files=["res://.godot/imported/Attack3.png-b0af866d240234dc1fb83d11241502a0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diae4syvcsiws"
-path="res://.godot/imported/Bomb_sprite.png-3b594c10ad73a251986c7d4bc18af181.ctex"
+uid="uid://dmhykrgfekog2"
+path="res://.godot/imported/Attack3.png-dc73d2fa744f1f558185fc7bff894401.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/obstacles/monsters/Goblin/Bomb_sprite.png"
-dest_files=["res://.godot/imported/Bomb_sprite.png-3b594c10ad73a251986c7d4bc18af181.ctex"]
+source_file="res://resources/images/monsters/Goblin/Attack3.png"
+dest_files=["res://.godot/imported/Attack3.png-dc73d2fa744f1f558185fc7bff894401.ctex"]
 
 [params]
 

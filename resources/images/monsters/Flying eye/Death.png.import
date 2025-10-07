@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctju6k642gxdh"
-path="res://.godot/imported/Attack.png-c4e1dafde14db247fb9a0fab809b11ae.ctex"
+uid="uid://dul2bgyer8vdq"
+path="res://.godot/imported/Death.png-213f2e8b3d4e736661ec7b4a9fe6444e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/obstacles/monsters/Flying eye/Attack.png"
-dest_files=["res://.godot/imported/Attack.png-c4e1dafde14db247fb9a0fab809b11ae.ctex"]
+source_file="res://resources/images/monsters/Flying eye/Death.png"
+dest_files=["res://.godot/imported/Death.png-213f2e8b3d4e736661ec7b4a9fe6444e.ctex"]
 
 [params]
 

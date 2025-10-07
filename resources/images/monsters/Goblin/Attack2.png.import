@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8ssul7f6mmv2"
-path="res://.godot/imported/Run.png-6afc04f196f2bf5464d9c9364e59ce98.ctex"
+uid="uid://bxp5hggnox4k6"
+path="res://.godot/imported/Attack2.png-a6f76eefdde89879a9bc29bde6b8d1ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/obstacles/monsters/Goblin/Run.png"
-dest_files=["res://.godot/imported/Run.png-6afc04f196f2bf5464d9c9364e59ce98.ctex"]
+source_file="res://resources/images/monsters/Goblin/Attack2.png"
+dest_files=["res://.godot/imported/Attack2.png-a6f76eefdde89879a9bc29bde6b8d1ab.ctex"]
 
 [params]
 
