@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://b6udgmoks2psb"]
+[gd_scene load_steps=13 format=3 uid="uid://b6udgmoks2psb"]
 
+[ext_resource type="Script" uid="uid://74lkxi2o3171" path="res://scenes/obstacles/flying_eye.gd" id="1_surqy"]
 [ext_resource type="Texture2D" uid="uid://i4jvshcf3y2x" path="res://resources/images/monsters/Flying eye/Flight.png" id="1_tc3c1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_surqy"]
@@ -73,14 +74,17 @@ size = Vector2(18.000002, 20.666668)
 z_index = 10
 texture_filter = 1
 scale = Vector2(3, 3)
+script = ExtResource("1_surqy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_jgvdx")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.6291549
+frame_progress = 0.036215138
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5.333333, 3.333334)
 shape = SubResource("RectangleShape2D_6wjgx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://btl2wwal72bqp"]
+[gd_scene load_steps=9 format=3 uid="uid://btl2wwal72bqp"]
 
+[ext_resource type="Script" uid="uid://okw1f11fbjpi" path="res://scenes/obstacles/goblin.gd" id="1_jwd1p"]
 [ext_resource type="Texture2D" uid="uid://41at7l0duw3p" path="res://resources/images/monsters/Goblin/Idle.png" id="1_k0i2r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jwd1p"]
@@ -46,14 +47,17 @@ z_index = 10
 texture_filter = 1
 rotation = -6.2831855
 scale = Vector2(3, 3)
+script = ExtResource("1_jwd1p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_1mpgk")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.017908206
+frame_progress = 0.3839062
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.4999981, 10.666667)
 shape = SubResource("RectangleShape2D_k0i2r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
