@@ -1,4 +1,5 @@
 extends Node
+const PLAYER_START_POSITION := Vector2i(133, 424)
 
 var screen_size: Vector2i
 ## Foreground and background current position
@@ -63,6 +64,7 @@ func _set_running(value: bool) -> void:
 ## Reset to initial state of the game when first started
 func reset():
 	$Player.reset()
+	$Player.position = PLAYER_START_POSITION
 	_set_score(0)
 	
 	_set_running(false)

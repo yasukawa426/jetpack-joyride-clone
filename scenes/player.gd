@@ -14,11 +14,9 @@ var running := false
 ## Are we dead????
 var dead := false
 
-var initial_position: Vector2
 
 func _ready() -> void:
 	screen_size = get_window().size
-	initial_position = position
 
 
 func _physics_process(delta: float) -> void:
@@ -59,6 +57,5 @@ func _physics_process(delta: float) -> void:
 
 # Resets player status
 func reset():
-	position = initial_position
 	running = false
 	dead = false
