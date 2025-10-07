@@ -10,6 +10,7 @@ const  GRAVITY := 1200
 
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
+		$AnimatedSprite2D.speed_scale = 1
 		$AnimatedSprite2D.play("run")
 	
 	# Add the gravity.
@@ -24,6 +25,8 @@ func _physics_process(delta: float) -> void:
 		else:	
 			$AnimatedSprite2D.play("fall")
 		
+		# lets scale animation speed based on y velocity - we get the current percentage of the maximum value and then multipiply by maximum speed scale we want i.e 2
+		$AnimatedSprite2D.speed_scale = (abs(velocity.y) / abs(JUMP_MAX_VELOCITY)) * 2
 
 	# Handle jump.
 	if Input.is_action_pressed("jump"):
