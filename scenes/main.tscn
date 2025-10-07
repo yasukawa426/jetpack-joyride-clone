@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://crk3s05w4yqyp"]
+[gd_scene load_steps=8 format=3 uid="uid://crk3s05w4yqyp"]
 
 [ext_resource type="Script" uid="uid://b1r0w78nk87xh" path="res://scenes/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://d23e2073qnnk1" path="res://scenes/background.tscn" id="1_sugp2"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c6kms4t7y5628" path="res://scenes/ground.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://cherehy5eavwl" path="res://scenes/debug_label.gd" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://b1cms14ickuq7" path="res://scenes/score_label.gd" id="6_tefeu"]
+[ext_resource type="Script" uid="uid://dcgh6peoq3ixk" path="res://scenes/obstacles.gd" id="9_85g3d"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_jyhfs")
@@ -51,3 +52,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "0 m"
 script = ExtResource("6_tefeu")
+
+[node name="Obstacles" type="Node" parent="."]
+script = ExtResource("9_85g3d")
+
+[node name="ObstacleTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]

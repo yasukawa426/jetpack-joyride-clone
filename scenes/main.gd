@@ -29,7 +29,7 @@ var score: float = 0
 var highscore := 0
 
 
-#TODO: Change some variable to global
+#TODO: Change some variables to global
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -42,6 +42,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not running:
 		$Background._set_scrolling_speed(0)
+		$ObstacleTimer.stop()
+		
+		for obstacle in $Obstacles.get_children():
+			obstacle.queue_free()
 		
 	
 	if running and loaded:
@@ -72,6 +76,9 @@ func _set_score(value: float) -> void:
 func _set_running(value: bool) -> void:
 	running = value
 	$Player.running = value
+	
+	if running == true:
+		$ObstacleTimer.start()		
 
 ## Reset to initial state of the game when first started
 func reset():
@@ -82,4 +89,15 @@ func reset():
 	
 	_set_score(0)
 	_set_running(false)
-	running_speed = 3
+
+
+func _on_obstacle_timer_timeout() -> void:
+	# Picks one random obstacle and loads it
+	var obstacle_scene: PackedScene = load(OBSTACLE_TYPES[randi() % OBSTACLE_TYPES.size()])
+	var newObstacle: Area2D = obstacle_scene.instantiate()
+	newObstacle.position = Vector2(OBSTACLE_SPAWN_X, 505)
+	
+	$Obstacles.add_child(newObstacle)
+	
+	#TODO: Adjust y spawn position based on obstacle type
+	
