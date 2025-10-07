@@ -36,3 +36,8 @@ func _scroll(delta: float):
 	
 	$Ground.position.x = -foreground_scroll 
 	#$Background.position.x = -background_scroll
+	
+
+func _set_score(value: float) -> void:
+	score = value
+	$UI/ScoreLabel.set_score(int(value))
