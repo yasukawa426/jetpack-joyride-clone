@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://d23e2073qnnk1"]
 
-[ext_resource type="Texture2D" uid="uid://bwun0xksu44h3" path="res://resources/images/background-clouds.png" id="1_jougr"]
-[ext_resource type="Texture2D" uid="uid://q4oxa4eursvs" path="res://resources/images/background-mountains.png" id="2_cbsqf"]
-[ext_resource type="Texture2D" uid="uid://dwc5pc0xrtc2y" path="res://resources/images/background-trees.png" id="3_wisxt"]
+[ext_resource type="Texture2D" uid="uid://bwun0xksu44h3" path="res://resources/images/background/background-clouds.png" id="1_jougr"]
+[ext_resource type="Texture2D" uid="uid://q4oxa4eursvs" path="res://resources/images/background/background-mountains.png" id="2_cbsqf"]
+[ext_resource type="Texture2D" uid="uid://dwc5pc0xrtc2y" path="res://resources/images/background/background-trees.png" id="3_wisxt"]
 
 [node name="Background" type="Node2D"]
 

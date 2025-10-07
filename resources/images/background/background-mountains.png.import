@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brnjxbo6c13of"
-path="res://.godot/imported/country-platform-tiles-example.png-df21d28d2676d1901454a039e32e7eef.ctex"
+uid="uid://q4oxa4eursvs"
+path="res://.godot/imported/background-mountains.png-50138870bfdd0f054a849ed2d001bbcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/images/country-platform-tiles-example.png"
-dest_files=["res://.godot/imported/country-platform-tiles-example.png-df21d28d2676d1901454a039e32e7eef.ctex"]
+source_file="res://resources/images/background/background-mountains.png"
+dest_files=["res://.godot/imported/background-mountains.png-50138870bfdd0f054a849ed2d001bbcc.ctex"]
 
 [params]
 

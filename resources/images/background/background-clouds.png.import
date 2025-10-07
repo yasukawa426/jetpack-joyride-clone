@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q4oxa4eursvs"
-path="res://.godot/imported/background-mountains.png-cadcc72bbcae8d8aa402fe52f98b0328.ctex"
+uid="uid://bwun0xksu44h3"
+path="res://.godot/imported/background-clouds.png-4c928270e6b8c8864cc3d8b604aafa1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/images/background-mountains.png"
-dest_files=["res://.godot/imported/background-mountains.png-cadcc72bbcae8d8aa402fe52f98b0328.ctex"]
+source_file="res://resources/images/background/background-clouds.png"
+dest_files=["res://.godot/imported/background-clouds.png-4c928270e6b8c8864cc3d8b604aafa1f.ctex"]
 
 [params]
 
