@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://btl2wwal72bqp"]
+
+[ext_resource type="Texture2D" uid="uid://41at7l0duw3p" path="res://resources/images/monsters/Goblin/Idle.png" id="1_k0i2r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwd1p"]
+atlas = ExtResource("1_k0i2r")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg77g"]
+atlas = ExtResource("1_k0i2r")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww1d5"]
+atlas = ExtResource("1_k0i2r")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3ud4"]
+atlas = ExtResource("1_k0i2r")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1mpgk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwd1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tg77g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww1d5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3ud4")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0i2r"]
+size = Vector2(23.666668, 31.333336)
+
+[node name="Goblin" type="Area2D"]
+z_index = 10
+texture_filter = 1
+rotation = -6.2831855
+scale = Vector2(3, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_1mpgk")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.017908206
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.4999981, 10.666667)
+shape = SubResource("RectangleShape2D_k0i2r")
