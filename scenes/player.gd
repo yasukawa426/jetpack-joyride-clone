@@ -7,6 +7,11 @@ const JUMP_MAX_VELOCITY := -600.0
 const FALL_MAX_VELOCITY := 600.0
 const  GRAVITY := 1200
 
+var screen_size: Vector2i
+
+func _ready() -> void:
+	screen_size = get_window().size
+
 
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
@@ -36,3 +41,4 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_MAX_VELOCITY
 
 	move_and_slide()
+	position.y = clampi(position.y, 0, screen_size.y)
