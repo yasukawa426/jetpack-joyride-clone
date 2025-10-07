@@ -1,17 +1,29 @@
 extends Node
+
+### Constants
 const PLAYER_START_POSITION := Vector2i(133, 424)
+const START_RUNNING_SPEED := 7
+const MAX_RUNNING_SPEED := 25
+const OBSTACLE_SPAWN_X := 1300
+
+const OBSTACLE_TYPES: Array[String] = ["res://scenes/obstacles/flying_eye.tscn", "res://scenes/obstacles/goblin.tscn"]
 
 var screen_size: Vector2i
-## Foreground and background current position
-var foreground_scroll = 0
-## Ground scroll speed
-var running_speed: int = 7
 
+
+
+### Flags
 
 ## Wether we are in a run
 var running := false
 var loaded := false
 
+### Variables
+
+## Foreground and background current position
+var foreground_scroll = 0
+## Ground scroll speed
+var running_speed: int = 7
 
 var score: float = 0
 var highscore := 0
@@ -65,7 +77,9 @@ func _set_running(value: bool) -> void:
 func reset():
 	$Player.reset()
 	$Player.position = PLAYER_START_POSITION
-	_set_score(0)
+	running_speed = START_RUNNING_SPEED
 	
+	
+	_set_score(0)
 	_set_running(false)
 	running_speed = 3
