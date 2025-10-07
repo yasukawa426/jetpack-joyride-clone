@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://crk3s05w4yqyp"]
+[gd_scene load_steps=7 format=3 uid="uid://crk3s05w4yqyp"]
 
 [ext_resource type="Script" uid="uid://b1r0w78nk87xh" path="res://scenes/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://d23e2073qnnk1" path="res://scenes/background.tscn" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b02h2jabhke1m" path="res://scenes/player.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c6kms4t7y5628" path="res://scenes/ground.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://cherehy5eavwl" path="res://scenes/debug_label.gd" id="5_tbgi4"]
+[ext_resource type="Script" uid="uid://b1cms14ickuq7" path="res://scenes/score_label.gd" id="6_tefeu"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_jyhfs")
-FOREGROUND_SCROLL_SPEED = 6
 
 [node name="Background" parent="." instance=ExtResource("1_sugp2")]
 position = Vector2(0, 22)
@@ -19,12 +19,35 @@ position = Vector2(0, 24)
 [node name="Player" parent="." instance=ExtResource("2_sugp2")]
 position = Vector2(133, 424)
 
-[node name="DebugLabel" type="Label" parent="."]
+[node name="UI" type="Control" parent="."]
 z_index = 10
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 40.0
+
+[node name="DebugLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 217.0
+offset_bottom = 73.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Player Y speed = 0
 "
 script = ExtResource("5_tbgi4")
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 534.0
+offset_right = 578.0
+offset_bottom = 35.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "0 m"
+script = ExtResource("6_tefeu")
