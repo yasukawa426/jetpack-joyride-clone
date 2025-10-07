@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://ba3nbkq7ni6yy" path="res://resources/images/tiles-small.png" id="1_pybca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pybca"]
-size = Vector2(2305, 34)
+size = Vector2(2305, 52)
 
-[node name="Ground" type="Area2D"]
+[node name="Ground" type="StaticBody2D"]
 z_index = 3
 
 [node name="TilesSmall" type="Sprite2D" parent="."]
@@ -19,5 +19,5 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_pybca")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1151.5, 559)
+position = Vector2(1151.5, 586)
 shape = SubResource("RectangleShape2D_pybca")
