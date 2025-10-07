@@ -9,11 +9,24 @@ const  GRAVITY := 1200
 
 var screen_size: Vector2i
 
+## Wheter we are in a run
+var running := false
+## Are we dead????
+var dead := false
+
+var initial_position: Vector2
+
 func _ready() -> void:
 	screen_size = get_window().size
+	initial_position = position
 
 
 func _physics_process(delta: float) -> void:
+	# 
+	if not running and not dead:
+		$AnimatedSprite2D.play("idle")
+		return
+		
 	if is_on_floor():
 		$AnimatedSprite2D.speed_scale = 1
 		$AnimatedSprite2D.play("run")
@@ -42,3 +55,10 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	position.y = clampi(position.y, 0, screen_size.y)
+	
+
+# Resets player status
+func reset():
+	position = initial_position
+	running = false
+	dead = false
