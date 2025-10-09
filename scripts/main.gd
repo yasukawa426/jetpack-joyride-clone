@@ -81,6 +81,14 @@ func _input(event: InputEvent) -> void:
 func _set_score(value: float) -> void:
 	score = value
 	$UI/ScoreLabel.set_score(int(value))
+	$UI/GameoverUI/OverScoreLabel.set_score(int(value))
+
+func _set_highscore(value: int) -> void:
+	if score > highscore:
+		highscore = int(score)
+		$UI/GameoverUI/OverHighScoreLabel.set_high_score(value)
+		_save()	
+	
 
 func _set_running(value: bool) -> void:
 	running = value
@@ -99,6 +107,9 @@ func reset():
 			obstacle.queue_free()
 	
 	$Obstacles.scrolling = true
+	$UI/StartLabel.show()
+	$UI/GameoverUI.hide()
+	
 	_set_score(0)
 	_set_running(false)
 
@@ -128,3 +139,19 @@ func _on_obstacle_hit() -> void:
 	$Player.set_dead(true)
 	$Obstacles.scrolling = false
 	_set_running(false)
+	_set_highscore(score)
+	
+	$UI/GameoverUI.show()
+
+#TODO: style all labels
+
+
+func _on_button_pressed() -> void:
+	reset()
+
+func _save():
+	pass
+
+
+func _load():
+	pass
