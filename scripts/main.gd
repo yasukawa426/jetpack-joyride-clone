@@ -95,9 +95,20 @@ func _on_obstacle_timer_timeout() -> void:
 	# Picks one random obstacle and loads it
 	var obstacle_scene: PackedScene = load(OBSTACLE_TYPES[randi() % OBSTACLE_TYPES.size()])
 	var newObstacle: Monster = obstacle_scene.instantiate()
-	newObstacle.position = Vector2(OBSTACLE_SPAWN_X, 500)
+	newObstacle.hit.connect(_on_obstacle_hit)
+	
+	var obstacle_spawn_y
+	if newObstacle._get_is_flying():
+		# if can fly spawn at the air
+		obstacle_spawn_y = randi_range(60, 463) 
+	else:
+		# if cant fly spawns at the ground
+		obstacle_spawn_y = 500
+	
+	
+	newObstacle.position = Vector2(OBSTACLE_SPAWN_X, obstacle_spawn_y)
+	
 	
 	$Obstacles.add_child(newObstacle)
 	
-	#TODO: Adjust y spawn position based on obstacle type
-	
+
