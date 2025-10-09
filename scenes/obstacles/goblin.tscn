@@ -111,7 +111,7 @@ size = Vector2(48.333336, 39.666664)
 z_index = 10
 texture_filter = 1
 rotation = -6.2831855
-scale = Vector2(3, 3)
+scale = Vector2(2.8, 2.8)
 script = ExtResource("1_jwd1p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

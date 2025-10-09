@@ -200,7 +200,7 @@ size = Vector2(56.666664, 36.666664)
 [node name="FlyingEye" type="Node2D"]
 z_index = 10
 texture_filter = 1
-scale = Vector2(3, 3)
+scale = Vector2(2.8, 2.8)
 script = ExtResource("1_surqy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
