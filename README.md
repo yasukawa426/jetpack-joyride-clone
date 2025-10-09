@@ -8,8 +8,8 @@ This time, instead of making a direct remake, I decided to make a game heavely i
 ### Goals
 - [x] Game world with a endlessly scrolling floor
 - [x] Player character that falls when no input is held, but hises when the input is held
-- [ ] Endless obstacles that move from right to left (at least 1). Must be recycled or deleted when they leave the screen
-- [ ] Score and highscore that increases with distance. E.g.: 1000m
+- [x] Endless obstacles that move from right to left (at least 1). Must be recycled or deleted when they leave the screen
+- [x] Score and highscore that increases with distance. E.g.: 1000m
 ### Bonus
 - [ ] Save highscore between sessions
 - [ ] Shoot objects from player when flying
