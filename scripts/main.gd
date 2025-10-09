@@ -35,6 +35,11 @@ var highscore := 0
 func _ready() -> void:
 	screen_size = get_window().size
 	
+	if OS.is_debug_build():
+		$UI/DebugLabel.show()
+	else:
+		$UI/DebugLabel.hide()
+	
 	loaded = true
 
 
