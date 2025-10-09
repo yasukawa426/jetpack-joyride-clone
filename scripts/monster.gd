@@ -12,6 +12,8 @@ func _get_animator() -> AnimatedSprite2D
 func _get_attack_animation_name() -> String
 @abstract
 func _get_idle_animation_name() -> String
+@abstract 
+func _get_is_flying() -> bool
 
 
 func _on_attack_area_2d_body_entered(body: Node2D) -> void:

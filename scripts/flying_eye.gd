@@ -11,3 +11,6 @@ func _get_attack_animation_name() -> String:
 	
 func _get_idle_animation_name() -> String:
 	return "idle"
+
+func _get_is_flying() -> bool:
+	return true
