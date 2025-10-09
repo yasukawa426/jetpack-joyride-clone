@@ -94,8 +94,8 @@ func reset():
 func _on_obstacle_timer_timeout() -> void:
 	# Picks one random obstacle and loads it
 	var obstacle_scene: PackedScene = load(OBSTACLE_TYPES[randi() % OBSTACLE_TYPES.size()])
-	var newObstacle: Area2D = obstacle_scene.instantiate()
-	newObstacle.position = Vector2(OBSTACLE_SPAWN_X, 505)
+	var newObstacle: Node2D = obstacle_scene.instantiate()
+	newObstacle.position = Vector2(OBSTACLE_SPAWN_X, 500)
 	
 	$Obstacles.add_child(newObstacle)
 	
