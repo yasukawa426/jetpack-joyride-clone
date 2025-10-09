@@ -90,7 +90,7 @@ func reset():
 	_set_score(0)
 	_set_running(false)
 
-
+#TODO: with time, create more timers that connect to this method, increasing the difficulty
 func _on_obstacle_timer_timeout() -> void:
 	# Picks one random obstacle and loads it
 	var obstacle_scene: PackedScene = load(OBSTACLE_TYPES[randi() % OBSTACLE_TYPES.size()])
@@ -112,3 +112,7 @@ func _on_obstacle_timer_timeout() -> void:
 	$Obstacles.add_child(newObstacle)
 	
 
+
+func _on_obstacle_hit() -> void:
+	#TODO: implement obstacle hit
+	pass
