@@ -113,9 +113,9 @@ func _on_obstacle_timer_timeout() -> void:
 	
 	
 	$Obstacles.add_child(newObstacle)
-	
 
 
 func _on_obstacle_hit() -> void:
-	#TODO: implement obstacle hit
-	pass
+	$Player.set_dead(true)
+	$Obstacles.scrolling = false
+	_set_running(false)
