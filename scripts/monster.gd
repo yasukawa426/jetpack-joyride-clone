@@ -2,7 +2,6 @@
 class_name Monster 
 extends Node2D
 
-@export var animator: AnimatedSprite2D
 @export var has_attack: bool
 
 signal hit
@@ -16,8 +15,8 @@ func _get_idle_animation_name() -> String
 
 
 func _on_attack_area_2d_body_entered(body: Node2D) -> void:
-	animator.animation_finished.connect(_on_attack_animation_ended)
-	animator.play(_get_attack_animation_name())
+	_get_animator().animation_finished.connect(_on_attack_animation_ended)
+	_get_animator().play(_get_attack_animation_name())
 	#TODO: play attack sound effect
 
 
