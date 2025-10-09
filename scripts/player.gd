@@ -41,7 +41,8 @@ func _physics_process(delta: float) -> void:
 	_handle_input(delta)
 		
 	if not running:
-		$AnimatedSprite2D.play("idle")
+		if not $AnimatedSprite2D.is_playing():
+			$AnimatedSprite2D.play("idle")
 		return
 		
 	if is_on_floor():
@@ -62,6 +63,7 @@ func _physics_process(delta: float) -> void:
 func reset():
 	running = false
 	_dead = false
+	$AnimatedSprite2D.play_backwards("death")
 	
 func set_dead(value: bool):
 	if _dead == value:
