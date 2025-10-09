@@ -12,7 +12,7 @@ This time, instead of making a direct remake, I decided to make a game heavely i
 - [x] Score and highscore that increases with distance. E.g.: 1000m
 - [ ] Add sound effects (footsteps, enemies attack sound, music, death music, ui interaction?)
 ### Bonus
-- [ ] Save highscore between sessions
+- [x] Save highscore between sessions
 - [ ] Shoot objects from player when flying
 - [ ] Particle effects when destroing objects(?) - Killing enemies with our flying magic?
 

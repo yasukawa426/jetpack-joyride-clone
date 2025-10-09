@@ -4,9 +4,11 @@ extends Node
 const PLAYER_START_POSITION := Vector2i(133, 424)
 const START_RUNNING_SPEED := 7
 const MAX_RUNNING_SPEED := 25
-const OBSTACLE_SPAWN_X := 1300
 
+const OBSTACLE_SPAWN_X := 1300
 const OBSTACLE_TYPES: Array[String] = ["res://scenes/obstacles/flying_eye.tscn", "res://scenes/obstacles/goblin.tscn"]
+
+const SAVE_PATH := "user://highscore.json"
 
 var screen_size: Vector2i
 
@@ -34,6 +36,8 @@ var highscore := 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_window().size
+	
+	_load()
 	
 	if OS.is_debug_build():
 		$UI/DebugLabel.show()
@@ -84,8 +88,8 @@ func _set_score(value: float) -> void:
 	$UI/GameoverUI/OverScoreLabel.set_score(int(value))
 
 func _set_highscore(value: int) -> void:
-	if score > highscore:
-		highscore = int(score)
+	if value > highscore:
+		highscore = int(value)
 		$UI/GameoverUI/OverHighScoreLabel.set_high_score(value)
 		_save()	
 	
@@ -150,8 +154,43 @@ func _on_button_pressed() -> void:
 	reset()
 
 func _save():
-	pass
+	print("Saving to :" + OS.get_user_data_dir())
+	var data := {
+		"highscore" = highscore
+	}
+	
+	var json_string := JSON.stringify(data)
+	
+	#open the file for writing as a FileAccess object
+	var file_access := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	
+	if not file_access:
+		#somethign went very wrong here
+		print("OPSIE, for some reason we couldn't save your data: ", FileAccess.get_open_error())
+		return
+	
+	file_access.store_line(json_string)
+	file_access.close()
 
 
 func _load():
-	pass
+	#nothing to load, exits
+	if not FileAccess.file_exists(SAVE_PATH):
+		_set_highscore(0)
+		return
+	
+	# opens the file for reading
+	var file_access := FileAccess.open(SAVE_PATH, FileAccess.READ)
+	var json_string := file_access.get_line()
+	file_access.close()
+	
+	var json := JSON.new()
+	var error := json.parse(json_string)
+	if error:
+		print("JSON PARSE ERROR BRUIH: ", json.get_error_message(), " in ", json_string,)
+		return
+	
+	#gets the highscore or 0 
+	var data:Dictionary = json.data
+	_set_highscore(data.get("highscore", 0))
+	print("Loaded highscore: " + str(highscore))
