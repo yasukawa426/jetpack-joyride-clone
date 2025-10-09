@@ -68,10 +68,14 @@ func _scroll(delta: float):
 	
 	$Ground.position.x = -foreground_scroll 
 
-func _unhandled_input(event: InputEvent) -> void:
-	
-	if event.is_action_released("jump"):
-		_set_running(true)
+func _input(event: InputEvent) -> void:
+	if $Player.get_dead() == true:
+		return
+
+	if not running:
+		if event.is_action_released("jump"):
+			$UI/StartLabel.hide()
+			_set_running(true)
 		
 
 func _set_score(value: float) -> void:
