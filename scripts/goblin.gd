@@ -1,17 +1,10 @@
-extends Node2D
+extends Monster
 
-signal hit
-
-
-func _on_attack_area_2d_body_entered(body: Node2D) -> void:
-	var animator: AnimatedSprite2D = $GoblinArea2D/AnimatedSprite2D
+func _get_animator() -> AnimatedSprite2D:
+	return $AnimatedSprite2D
 	
-	
-	animator.animation_finished.connect(_on_attack_animation_ended.bind(animator))
-	animator.play("Attack")
-	
-	#TODO: add attack sound effect
+func _get_attack_animation_name() -> String:
+	return "attack"
 
-
-func _on_attack_animation_ended(animator: AnimatedSprite2D) -> void:
-	animator.play("idle")
+func _get_idle_animation_name() -> String:
+	return "idle"
