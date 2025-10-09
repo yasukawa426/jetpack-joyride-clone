@@ -44,8 +44,8 @@ func _process(delta: float) -> void:
 		$Background._set_scrolling_speed(0)
 		$ObstacleTimer.stop()
 		
-		for obstacle in $Obstacles.get_children():
-			obstacle.queue_free()
+		#for obstacle in $Obstacles.get_children():
+		#	obstacle.queue_free()
 		
 	
 	if running and loaded:
@@ -86,7 +86,10 @@ func reset():
 	$Player.position = PLAYER_START_POSITION
 	running_speed = START_RUNNING_SPEED
 	
+	for obstacle in $Obstacles.get_children():
+			obstacle.queue_free()
 	
+	$Obstacles.scrolling = true
 	_set_score(0)
 	_set_running(false)
 
