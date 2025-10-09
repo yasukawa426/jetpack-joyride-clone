@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 		if velocity.y > FALL_MAX_VELOCITY:
 			velocity.y = FALL_MAX_VELOCITY
 
+	$AnimatedSprite2D.speed_scale = 1
 	move_and_slide()
 	position.y = clampi(position.y, 0, screen_size.y)
 	
@@ -44,7 +45,6 @@ func _physics_process(delta: float) -> void:
 		return
 		
 	if is_on_floor():
-		$AnimatedSprite2D.speed_scale = 1
 		$AnimatedSprite2D.play("run")
 	else:
 		if velocity.y < 0:
@@ -75,6 +75,8 @@ func set_dead(value: bool):
 		$AnimatedSprite2D.play("death")
 		pass
 
+func get_dead() -> bool:
+	return _dead
 
 func _handle_input(delta: float):
 	# Handle jump.
