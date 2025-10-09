@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://crk3s05w4yqyp"]
+[gd_scene load_steps=10 format=3 uid="uid://crk3s05w4yqyp"]
 
 [ext_resource type="Script" uid="uid://b1r0w78nk87xh" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://d23e2073qnnk1" path="res://scenes/background.tscn" id="1_sugp2"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c6kms4t7y5628" path="res://scenes/ground.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://cherehy5eavwl" path="res://scripts/debug_label.gd" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://b1cms14ickuq7" path="res://scripts/score_label.gd" id="6_tefeu"]
+[ext_resource type="Script" uid="uid://ddi2wlffh3yrs" path="res://scripts/over_score_label.gd" id="7_85g3d"]
+[ext_resource type="Script" uid="uid://ce2vx1ou3r3du" path="res://scripts/over_high_score_label.gd" id="8_choun"]
 [ext_resource type="Script" uid="uid://dcgh6peoq3ixk" path="res://scripts/obstacles.gd" id="9_85g3d"]
 
 [node name="Main" type="Node"]
@@ -30,6 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="DebugLabel" type="Label" parent="UI"]
+visible = false
 layout_mode = 1
 offset_right = 217.0
 offset_bottom = 73.0
@@ -55,10 +58,100 @@ theme_override_font_sizes/font_size = 25
 text = "0 m"
 script = ExtResource("6_tefeu")
 
+[node name="StartLabel" type="Label" parent="UI"]
+visible = false
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -17.5
+offset_right = 22.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "- Press \"JUMP\" to start -"
+
+[node name="GameoverUI" type="Control" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/GameoverUI"]
+custom_minimum_size = Vector2(180, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -100.0
+offset_right = 90.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OverScoreLabel" type="Label" parent="UI/GameoverUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.5
+offset_top = -100.0
+offset_right = 49.5
+offset_bottom = -51.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Score: 100 m
+"
+script = ExtResource("7_85g3d")
+
+[node name="OverHighScoreLabel" type="Label" parent="UI/GameoverUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.5
+offset_top = -77.0
+offset_right = 71.5
+offset_bottom = -28.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HighScore: 1000 m
+"
+script = ExtResource("8_choun")
+
+[node name="Button" type="Button" parent="UI/GameoverUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = 54.0
+offset_right = 44.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Play Again"
+
 [node name="Obstacles" type="Node" parent="."]
 script = ExtResource("9_85g3d")
 
 [node name="ObstacleTimer" type="Timer" parent="."]
 wait_time = 1.5
 
+[connection signal="pressed" from="UI/GameoverUI/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]
