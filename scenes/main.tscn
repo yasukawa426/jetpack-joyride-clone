@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://crk3s05w4yqyp"]
+[gd_scene load_steps=13 format=3 uid="uid://crk3s05w4yqyp"]
 
 [ext_resource type="Script" uid="uid://b1r0w78nk87xh" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://d23e2073qnnk1" path="res://scenes/background.tscn" id="1_sugp2"]
@@ -9,6 +9,44 @@
 [ext_resource type="Script" uid="uid://ddi2wlffh3yrs" path="res://scripts/over_score_label.gd" id="7_85g3d"]
 [ext_resource type="Script" uid="uid://ce2vx1ou3r3du" path="res://scripts/over_high_score_label.gd" id="8_choun"]
 [ext_resource type="Script" uid="uid://dcgh6peoq3ixk" path="res://scripts/obstacles.gd" id="9_85g3d"]
+
+[sub_resource type="Animation" id="Animation_85g3d"]
+resource_name = "day_cycle"
+length = 70.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30, 34, 40, 60.066666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.8570418, 0.56661296, 0.41413584, 1), Color(0.10980392, 0.24705882, 0.34901962, 1), Color(0.10980392, 0.24705882, 0.34901962, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_choun"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ya4ey"]
+_data = {
+&"RESET": SubResource("Animation_choun"),
+&"day_cycle": SubResource("Animation_85g3d")
+}
 
 [node name="Main" type="Node"]
 script = ExtResource("1_jyhfs")
@@ -150,8 +188,13 @@ text = "Play Again"
 [node name="Obstacles" type="Node" parent="."]
 script = ExtResource("9_85g3d")
 
-[node name="ObstacleTimer" type="Timer" parent="."]
-wait_time = 1.5
+[node name="Timers" type="Node" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ya4ey")
+}
 
 [connection signal="pressed" from="UI/GameoverUI/Button" to="." method="_on_button_pressed"]
-[connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]

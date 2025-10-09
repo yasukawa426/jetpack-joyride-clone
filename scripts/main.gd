@@ -147,6 +147,7 @@ func reset():
 	next_timer_threshold = START_TIMER_THRESHOLD
 	next_spawner_threshold = START_SPAWNER_THRESHOLD
 
+	$AnimationPlayer.play("RESET")
 	
 	_set_score(0)
 	_set_running(false)
@@ -178,6 +179,8 @@ func _on_obstacle_hit() -> void:
 	$Obstacles.scrolling = false
 	_set_running(false)
 	_set_highscore(score)
+	
+	$AnimationPlayer.pause()
 	
 	$UI/GameoverUI.show()
 
