@@ -4,22 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://41at7l0duw3p" path="res://resources/images/monsters/Goblin/Idle.png" id="1_k0i2r"]
 [ext_resource type="Texture2D" uid="uid://br8ot4e4up7f0" path="res://resources/images/monsters/Goblin/Attack.png" id="2_tg77g"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jwd1p"]
-atlas = ExtResource("1_k0i2r")
-region = Rect2(0, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tg77g"]
-atlas = ExtResource("1_k0i2r")
-region = Rect2(150, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ww1d5"]
-atlas = ExtResource("1_k0i2r")
-region = Rect2(300, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j3ud4"]
-atlas = ExtResource("1_k0i2r")
-region = Rect2(450, 0, 150, 150)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_1mpgk"]
 atlas = ExtResource("2_tg77g")
 region = Rect2(1050, 0, 150, 150)
@@ -52,25 +36,24 @@ region = Rect2(150, 0, 150, 150)
 atlas = ExtResource("2_tg77g")
 region = Rect2(0, 0, 150, 150)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwd1p"]
+atlas = ExtResource("1_k0i2r")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg77g"]
+atlas = ExtResource("1_k0i2r")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww1d5"]
+atlas = ExtResource("1_k0i2r")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3ud4"]
+atlas = ExtResource("1_k0i2r")
+region = Rect2(450, 0, 150, 150)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_1mpgk"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jwd1p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tg77g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ww1d5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j3ud4")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 4.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1mpgk")
@@ -99,6 +82,23 @@ animations = [{
 "loop": false,
 "name": &"attack",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwd1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tg77g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww1d5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3ud4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0i2r"]
@@ -118,8 +118,8 @@ script = ExtResource("1_jwd1p")
 rotation = -3.1415925
 scale = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_1mpgk")
-animation = &"attack"
-autoplay = "Idle"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="GoblinArea2D" type="Area2D" parent="."]
 
