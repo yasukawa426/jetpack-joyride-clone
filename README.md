@@ -13,7 +13,7 @@ This time, instead of making a direct remake, I decided to make a game heavely i
 ### Bonus
 - [ ] Save highscore between sessions
 - [ ] Shoot objects from player when flying
-- [ ] Particle effects when destroing objects(?)
+- [ ] Particle effects when destroing objects(?) - Killing enemies with our flying magic?
 
 
 WIP
