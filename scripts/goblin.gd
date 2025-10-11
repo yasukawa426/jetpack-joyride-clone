@@ -4,6 +4,8 @@ func _get_animator() -> AnimatedSprite2D:
 	return $AnimatedSprite2D
 	
 func _get_attack_animation_name() -> String:
+	$YellAudioStreamPlayer.play()
+	$AttackAudioStreamPlayer.play()
 	return "attack"
 
 func _get_idle_animation_name() -> String:
