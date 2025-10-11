@@ -2,3 +2,6 @@ Credits for all the free assets used and their licenses
 Country Side platform sprites by ansimuz -- https://opengameart.org/content/country-side-platform-tiles -- CC0
 Fantasy Knight by aamatniekss -- https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character
 Monsters Creatures Fantasy by LuizMelo -- https://luizmelo.itch.io/monsters-creatures-fantasy
+Sword_whoosh_sound.mp3 by Artninja -- https://freesound.org/s/700220/ -- License: Attribution 4.0
+Knight Footsteps Forest by Ali_6868 -- https://freesound.org/people/Ali_6868/packs/21610/ -- License: Creative Commons 0
+Goblin_Yell.mp3 by SnowFightStudios -- https://freesound.org/s/643655/ -- License: Creative Commons 0
