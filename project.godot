@@ -13,7 +13,7 @@ config_version=5
 config/name="Jetpack Joyride Clone"
 run/main_scene="uid://crk3s05w4yqyp"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://cu5fo35p3r4aw"
 
 [editor_plugins]
 
