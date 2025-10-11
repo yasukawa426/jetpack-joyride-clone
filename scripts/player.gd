@@ -21,6 +21,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	#Stuff here happens if the player is alive or not
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
@@ -87,3 +88,18 @@ func _handle_input(delta: float):
 		
 		if velocity.y < JUMP_MAX_VELOCITY:
 			velocity.y = JUMP_MAX_VELOCITY
+
+
+#Whenever the frame changes, we check if its a footstep frame in the run animation and play the sound if it is
+func _on_animated_sprite_2d_frame_changed() -> void:
+	var animator: AnimatedSprite2D = $AnimatedSprite2D
+	var footstep_player: AudioStreamPlayer = $FootstepsAudioStreamPlayer
+	const FOOTSTEP_FRAMES := [1, 6]
+	var is_running_animation: bool = animator.is_playing() and animator.animation == "run"
+	
+	if is_running_animation and animator.frame in FOOTSTEP_FRAMES:
+		footstep_player.play()
+		print("Step!")
+	
+	else:
+		footstep_player.stop()
