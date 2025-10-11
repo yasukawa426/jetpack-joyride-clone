@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://b02h2jabhke1m"]
+[gd_scene load_steps=58 format=3 uid="uid://b02h2jabhke1m"]
 
 [ext_resource type="Script" uid="uid://cphl6a4bdamag" path="res://scripts/player.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://dctbhd7imjyhc" path="res://resources/images/knight/_Idle.png" id="1_g2els"]
@@ -6,13 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://vafv06v1fe5h" path="res://resources/images/knight/_Fall.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://bbiytjn3dngj6" path="res://resources/images/knight/_DeathNoMovement.png" id="2_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://duj7en0mgvbxe" path="res://resources/images/knight/_Jump.png" id="4_tuyoq"]
-[ext_resource type="AudioStream" uid="uid://chd80n12pq2po" path="res://resources/audio/footsteps/Step 1.wav" id="7_jej6c"]
-[ext_resource type="AudioStream" uid="uid://drj3t3xw7nl1t" path="res://resources/audio/footsteps/Step 2.wav" id="8_f1ej7"]
-[ext_resource type="AudioStream" uid="uid://b0crvhdjavxat" path="res://resources/audio/footsteps/Step 3.wav" id="9_oprun"]
-[ext_resource type="AudioStream" uid="uid://byctl68ns87t8" path="res://resources/audio/footsteps/Step 4.wav" id="10_a8ls1"]
-[ext_resource type="AudioStream" uid="uid://dsbseo3yrqi87" path="res://resources/audio/footsteps/Step 5.wav" id="11_qfm1y"]
-[ext_resource type="AudioStream" uid="uid://bwleelnusx8mg" path="res://resources/audio/footsteps/Step 6.wav" id="12_fulsm"]
-[ext_resource type="AudioStream" uid="uid://bjal8xc16fo88" path="res://resources/audio/footsteps/Step 7.wav" id="13_4r5pv"]
+[ext_resource type="AudioStream" uid="uid://chd80n12pq2po" path="res://resources/audio/player/footsteps/Step 1.wav" id="7_jej6c"]
+[ext_resource type="AudioStream" uid="uid://r6ujb47vx8dl" path="res://resources/audio/player/death/Death 1.wav" id="7_qfm1y"]
+[ext_resource type="AudioStream" uid="uid://drj3t3xw7nl1t" path="res://resources/audio/player/footsteps/Step 2.wav" id="8_f1ej7"]
+[ext_resource type="AudioStream" uid="uid://c4u2f23vx6kgo" path="res://resources/audio/player/death/Death 2.wav" id="8_fulsm"]
+[ext_resource type="AudioStream" uid="uid://b6dwlwhupnau1" path="res://resources/audio/player/death/Death 3.wav" id="9_4r5pv"]
+[ext_resource type="AudioStream" uid="uid://b0crvhdjavxat" path="res://resources/audio/player/footsteps/Step 3.wav" id="9_oprun"]
+[ext_resource type="AudioStream" uid="uid://dq7gwluy7gg6w" path="res://resources/audio/player/death/Death 4.wav" id="10_60mlk"]
+[ext_resource type="AudioStream" uid="uid://byctl68ns87t8" path="res://resources/audio/player/footsteps/Step 4.wav" id="10_a8ls1"]
+[ext_resource type="AudioStream" uid="uid://dsbseo3yrqi87" path="res://resources/audio/player/footsteps/Step 5.wav" id="11_qfm1y"]
+[ext_resource type="AudioStream" uid="uid://bwleelnusx8mg" path="res://resources/audio/player/footsteps/Step 6.wav" id="12_fulsm"]
+[ext_resource type="AudioStream" uid="uid://bjal8xc16fo88" path="res://resources/audio/player/footsteps/Step 7.wav" id="13_4r5pv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wqfne"]
 atlas = ExtResource("2_tuyoq")
@@ -297,6 +301,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(18, 37)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_i4ail"]
+playback_mode = 1
+streams_count = 4
+stream_0/stream = ExtResource("7_qfm1y")
+stream_1/stream = ExtResource("8_fulsm")
+stream_2/stream = ExtResource("9_4r5pv")
+stream_3/stream = ExtResource("10_60mlk")
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_60mlk"]
 playback_mode = 1
 random_pitch = 1.5
@@ -325,6 +337,10 @@ frame_progress = 0.88850355
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 21.5)
 shape = SubResource("RectangleShape2D_g2els")
+
+[node name="DieAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_i4ail")
+pitch_scale = 0.75
 
 [node name="FootstepsAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_60mlk")

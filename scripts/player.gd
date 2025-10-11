@@ -76,6 +76,7 @@ func set_dead(value: bool):
 	if value == true:
 		#TODO: blood effect(?), rotate?
 		$AnimatedSprite2D.play("death")
+		$DieAudioStreamPlayer.play()
 		pass
 
 func get_dead() -> bool:
