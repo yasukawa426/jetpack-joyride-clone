@@ -23,12 +23,12 @@ This time, instead of making a direct remake, I decided to make a game heavely i
 - [ ] Add extra sound effect (music, ui interaction)
 
 ### Credits
-Country Side platform sprites by ansimuz -- https://opengameart.org/content/country-side-platform-tiles -- CC0
-Fantasy Knight by aamatniekss -- https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character
-Monsters Creatures Fantasy by LuizMelo -- https://luizmelo.itch.io/monsters-creatures-fantasy
-Sword_whoosh_sound.mp3 by Artninja -- https://freesound.org/s/700220/ -- License: Attribution 4.0
-Knight Footsteps Forest by Ali_6868 -- https://freesound.org/people/Ali_6868/packs/21610/ -- License: Creative Commons 0
-Goblin_Yell.mp3 by SnowFightStudios -- https://freesound.org/s/643655/ -- License: Creative Commons 0
-monster_bites_FINAL_06192025 by Artninja, theplex and Aerny -- https://freesound.org/s/812556/ -- License: Attribution 4.0
+Country Side platform sprites by ansimuz -- https://opengameart.org/content/country-side-platform-tiles -- CC0 <br/>
+Fantasy Knight by aamatniekss -- https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character <br/>
+Monsters Creatures Fantasy by LuizMelo -- https://luizmelo.itch.io/monsters-creatures-fantasy -- CC0 <br/>
+Sword_whoosh_sound.mp3 by Artninja -- https://freesound.org/s/700220/ -- License: Attribution 4.0<br/>
+Knight Footsteps Forest by Ali_6868 -- https://freesound.org/people/Ali_6868/packs/21610/ -- License: Creative Commons 0<br/>
+Goblin_Yell.mp3 by SnowFightStudios -- https://freesound.org/s/643655/ -- License: Creative Commons 0 <br/>
+monster_bites_FINAL_06192025 by Artninja, theplex and Aerny -- https://freesound.org/s/812556/ -- License: Attribution 4.0 <br/>
 BirdFlap1.wav by AgentDD -- https://freesound.org/s/246225/ -- License: Attribution 3.0<br/>
-Player death sound by me lmao
+Player death sound by me lmao <br\>
